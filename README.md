@@ -39,11 +39,13 @@ You will deliver the results of your lab in a GitHub repository.
 
 Your repository should contain both the source code of your Java project and your report. Your report should be a single `README.md` file, located at the root of your repository. The images should be placed in a `figures` directory.
 
-Your report should include the following sections:
+Your report MUST include the following sections:
 
 * **A brief description of your project**: if people exploring GitHub find your repo, without a prior knowledge of the RES course, they should be able to understand what your repo is all about and whether they should look at it more closely.
 
 * **Clear and simple instructions for configuring your tool and running a prank campaign**. If you do a good job, an external user should be able to clone your repo, edit a couple of files and send a batch of e-mails in less than 10 minutes.
+
+In addition, your report SHOULD include (i.e. you will not have penalties if you don't provide the info, but if you want to add this project to your portfolio, it is worth doing it):
 
 * **A concise description of your implementation**: document the key aspects of your code. It is probably a good idea to start with a class diagram. Decide which classes you want to show (focus on the important ones) and describe their responsibilities in text. It is also certainly a good idea to include examples of dialogues between your client and a SMTP server (maybe you also want to include some screenshots here).
 
@@ -52,13 +54,7 @@ Your report should include the following sections:
       
 ## Evaluation
 
-* You can work in **groups of 2 students**. 
-
-* You are free to **form these groups as you wish**.
-
-* However, we strongly believe that **everybody will benefit if a more experienced student works with a more junior one in a "smart way"** (i.e. does not do all the work, but leads the way). For the experienced student, it is a good opportunity to develop coaching and mentoring skills. For the junior student, it is a good opportunity to learn good practices from a peer.
-
-* Your code and report will be evaluated and you will get a full lab grade. You will also be asked to **do a 5' demo** of your application. Make sure that you prepare a clear and convincing demo scenario in advance.
+* See CyberLearn.
 
 
 
