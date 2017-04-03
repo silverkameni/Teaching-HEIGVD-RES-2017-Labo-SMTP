@@ -1,4 +1,4 @@
-# Teaching-HEIGVD-RES-2016-Labo-SMTP
+# Teaching-HEIGVD-RES-2017-Labo-SMTP
 
 ## Objectives
 
