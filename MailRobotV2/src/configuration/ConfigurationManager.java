@@ -1,25 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package configuration;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import mail.Mail;
 import mail.Person;
 
-/**
+/*
+ *@authors silver kameni && zacharie nguefack
  *
- * @author SILVERCORP
+ *description: dans cette classe, nous allons utiliser nos fichiers 
+ *"configuration.properties", "victims.utf8" et "messages.utf8" afin d'en
+ *extraire le contenu qui sera utilisé pour crée nos mails forgés
+ *
  */
+
 public class ConfigurationManager implements IConfigurationManager {
 
     private String smtpServerAddress;
@@ -36,23 +35,23 @@ public class ConfigurationManager implements IConfigurationManager {
 
     }
 
-    /*
-     *permet de recuperer le nom et le prenom pour chaque adresse email 
+    
+    /**
+     **permet de recuperer le nom et le prenom pour chaque adresse email 
      *a partir de la liste des adresses emails contenu dans le fichier 
      * "victims" passé en parametre
+     * 
+     * @param filename: fichier "victims.utf8"
+     * @return : retourne la liste des victimes pour le prank
+     * @throws IOException
      */
+
     @Override
-    public List<Person> loadAddressFromFile(String filename) throws IOException  {
+    public List<Person> loadAddressFromFile(String filename) throws IOException {
 
         List<Person> listOfPerson;
 
-         
-        
-           try (FileInputStream f = new FileInputStream(filename)) {
-            InputStreamReader fls = new InputStreamReader(f, "UTF-8");
-            
-            
-            try (BufferedReader reader = new BufferedReader(fls)) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"))) {
             listOfPerson = new LinkedList<>();
             String address = reader.readLine();
 
@@ -65,16 +64,22 @@ public class ConfigurationManager implements IConfigurationManager {
                 address = reader.readLine(); // lire la prochaine adresse
 
             }
-            }
-           }
-        
+        }
+
         return listOfPerson;
 
     }
 
-   
+    /**
+     * /*
+     *permet de recuperer les valeurs des configurations que nous avons spécifiée
+     *dans le fichier "configuration.properties", pour ce faire nous avons utilisé
+     *la methode getProperty de la classe Properties de java
+     *
+     * @param filename : fichier "configuration.properties
+     */
     @Override
-    public void loadPropertie(String filename) throws IOException {
+    public void loadPropertie(String filename) throws IOException  {
         FileInputStream fileInputStream = new FileInputStream(filename);
         Properties properpties = new Properties();
         properpties.load(fileInputStream);
@@ -86,8 +91,16 @@ public class ConfigurationManager implements IConfigurationManager {
 
     }
 
+    /**
+     *Permet de recupérer chaque partie du message que nous avons ecrit dans notre fichier
+     * "messages.utf8" et d'en extraire l'objet du message (Subject) et le 
+     * corps (Body)
+     * @param filename: fichier "messages.utf8"
+     * @return: retourne la liste des message pour les mails
+     */
+
     @Override
-    public List<Mail> loadMailFromFile(String filename) throws UnsupportedEncodingException, IOException {
+    public List<Mail> loadMailFromFile(String filename) throws IOException {
 
         List<Mail> listOfMail;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "UTF-8"))) {
@@ -146,5 +159,5 @@ public class ConfigurationManager implements IConfigurationManager {
     public String getSubject() {
         return subject;
     }
-    
+
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package configuration;
 
 import java.io.IOException;
@@ -13,6 +8,7 @@ import mail.Person;
 /*
  *@authors silver kameni && zacharie nguefack
  */
+
 public interface IConfigurationManager {
 
     public List<Mail> loadMailFromFile(String filename) throws IOException;

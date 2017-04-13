@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package prank;
 
 import configuration.IConfigurationManager;
@@ -16,6 +11,10 @@ import mail.Person;
 
 /*
  *@authors silver kameni && zacharie nguefack
+ *
+ *Dans cette classe, nous definirons la structure logique et fonctionnelle de notre
+ *Prank tout en respectant les consignes et specifications du cahier de charge
+ *
  */
 
 

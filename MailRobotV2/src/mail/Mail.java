@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mail;
 
 import java.util.ArrayList;
@@ -10,6 +5,9 @@ import java.util.List;
 
 /*
  *@authors silver kameni && zacharie nguefack
+ *
+ *cette classe a pour role de definir et stocker les différentes parties
+ *du mail, en effet c'est elle qui definir la structure concrete du mail
  */
 public class Mail {
 

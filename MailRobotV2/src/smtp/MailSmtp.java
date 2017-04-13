@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package smtp;
 
 import configuration.ConfigurationManager;
@@ -24,6 +19,11 @@ import prank.PrankGenerator;
 
 /*
  *@authors silver kameni && zacharie nguefack
+ *
+ *Dans cette classe, nous realisons la partie communicationnelle(échange) entre
+ *le client et le serveur tout en respectant de facon minitieuse les differentes
+ *spécifications du protocole SMTP et nous gérons egalement a chaque envoie, la reponse
+ *du serveur et renvoyons une exception en cas de problème. ( Cf. RFC 5321 SMTP)
  */
 public class MailSmtp {
     
@@ -90,7 +90,7 @@ public class MailSmtp {
                 throw new SmtpException("Send Email", ConnectionCode, lastMessageOfServer);
             }
 
-            sendcommand(output, "Quit", input, VALIDATION);
+            sendcommand(output, "QUIT", input, VALIDATION);
             
             
         } catch (IOException e1) {
@@ -152,6 +152,8 @@ public class MailSmtp {
     }
 
     /**
+     * c'est cette methode qui nous permet d'envoyer la partie apres la commande 
+     * "DATA" au seveur
      *On commence par envoyer l'entete puis on fera appel a la fonction "bodymessage" 
      * qui se chargera d'y ajouter le corps du mail
      */
